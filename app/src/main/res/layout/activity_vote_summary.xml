@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".voteSummary"
+    android:orientation="vertical"
+    android:background="@drawable/grad_bg">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:id="@+id/questiontxt"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@+id/questiontxt"
+        android:id="@+id/vote1txt"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:id="@+id/vote2txt"
+        android:textAllCaps="true"
+        android:layout_below="@+id/vote1xt"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:id="@+id/vote3txt"
+        android:textAllCaps="true"
+        android:layout_below="@+id/vote2txt"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:id="@+id/vote4txt"
+        android:layout_below="@+id/vote3txt"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

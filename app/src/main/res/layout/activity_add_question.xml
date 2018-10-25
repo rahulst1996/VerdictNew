@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad_bg"
+    android:orientation="vertical"
+    tools:context=".addQuestion">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/question"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter your question here"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/option1"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter first option"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/option2"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter second option"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/option3"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter third option"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/option4"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter fourth option"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="Save"
+            android:background="@drawable/btn_bg"
+            android:textAllCaps="false"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:textSize="16sp"
+            android:id="@+id/qsave"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

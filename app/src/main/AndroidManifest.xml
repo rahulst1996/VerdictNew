@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.verdict">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_verdict"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_verdict"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".homeScreen" />
+        <activity android:name=".NewUserInfo" />
+        <activity android:name=".addQuestion" />
+        <activity android:name=".showQuestions" />
+        <activity android:name=".VoteScreen" />
+        <activity android:name=".UserQuestions" />
+        <activity android:name=".voteSummary"></activity>
+    </application>
+
+</manifest>

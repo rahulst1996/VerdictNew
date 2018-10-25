@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewUserInfo"
+    android:orientation="vertical"
+    android:background="@drawable/grad_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Username"
+        android:textSize="15sp"
+        android:id="@+id/usertxt"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/userEdt"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter the name you want to display"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Age"
+        android:textSize="15sp"
+        android:id="@+id/agetxt"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/ageEdt"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/et_bg"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="Save"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:id="@+id/savebtn"
+        tools:ignore="HardcodedText"
+        android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
