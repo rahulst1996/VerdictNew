@@ -10,8 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,10 +31,12 @@ import java.util.Map;
 public class addQuestion extends AppCompatActivity {
 
     EditText ques,opt1,opt2,opt3,opt4;
-    Button save,brefresh;
+    Button save;
     FirebaseAuth mauth;
-    String q,o1,o2,o3,o4,userid;
+    String q,o1,o2,o3,o4,userid,category;
     long i,number;
+    Spinner cat;
+    String [] categoryItemss = {"Techology","Science","Politics","Education"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,26 @@ public class addQuestion extends AppCompatActivity {
         opt3=findViewById(R.id.option3);
         opt4=findViewById(R.id.option4);
         save=findViewById(R.id.qsave);
+        cat=findViewById(R.id.categories);
 
+        ArrayAdapter categ = new ArrayAdapter(this, android.R.layout.simple_spinner_item,categoryItemss);
+        categ.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cat.setAdapter(categ);
+        cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                category = (String) adapterView.getItemAtPosition(i);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+                category = "Not specified";
+
+            }
+        });
 
 
 
@@ -70,7 +94,7 @@ public class addQuestion extends AppCompatActivity {
     }
 
     public void createQuestion() {
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Questions").child(userid).child("User's Question " + i);
+                DatabaseReference UsersQuestion = FirebaseDatabase.getInstance().getReference().child("Questions").child(userid).child("User's Question " + i);
                 q = ques.getText().toString();
                 o1 = opt1.getText().toString();
                 o2 = opt2.getText().toString();
@@ -83,17 +107,18 @@ public class addQuestion extends AppCompatActivity {
                 options.put("Option 2", o2);
                 options.put("Option 3", o3);
                 options.put("Option 4", o4);
-                databaseReference.setValue(options);
-                DatabaseReference databaseReference3 = FirebaseDatabase.getInstance().getReference("All Votes").child(q);
+                options.put("Categories",category);
+                UsersQuestion.setValue(options);
+                DatabaseReference DefaultVoteCount = FirebaseDatabase.getInstance().getReference("All Votes").child(q);
 
-                databaseReference3.child("Option 1").setValue("0");
-                databaseReference3.child("Option 2").setValue("0");
-                databaseReference3.child("Option 3").setValue("0");
-                databaseReference3.child("Option 4").setValue("0");
+                DefaultVoteCount.child("Option 1").setValue("0");
+                DefaultVoteCount.child("Option 2").setValue("0");
+                DefaultVoteCount.child("Option 3").setValue("0");
+                DefaultVoteCount.child("Option 4").setValue("0");
 
 
-                final DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference().child("All questions").child("Question " + number);
-                databaseReference2.setValue(options);
+                final DatabaseReference setAllQuestions = FirebaseDatabase.getInstance().getReference().child("All questions").child("Question " + number);
+                setAllQuestions.setValue(options);
 
                 ques.setText("");
                 opt1.setText("");
@@ -110,8 +135,8 @@ public class addQuestion extends AppCompatActivity {
     }
 
     public void countUserQuestions(){
-        DatabaseReference databaseReference0=FirebaseDatabase.getInstance().getReference().child("Questions").child(userid);
-        databaseReference0.addValueEventListener(new ValueEventListener() {
+        DatabaseReference userQuestionCount=FirebaseDatabase.getInstance().getReference().child("Questions").child(userid);
+        userQuestionCount.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 i=dataSnapshot.getChildrenCount()+1;
@@ -127,8 +152,8 @@ public class addQuestion extends AppCompatActivity {
 
     public void countAllQuestions(){
         final FirebaseDatabase database=FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference1=database.getReference("All questions");
-        databaseReference1.addValueEventListener(new ValueEventListener() {
+        DatabaseReference allQuestionCount=database.getReference("All questions");
+        allQuestionCount.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     number = dataSnapshot.getChildrenCount()+1;

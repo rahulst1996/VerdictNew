@@ -24,7 +24,8 @@
         <activity android:name=".showQuestions" />
         <activity android:name=".VoteScreen" />
         <activity android:name=".UserQuestions" />
-        <activity android:name=".voteSummary"></activity>
+        <activity android:name=".voteSummary" />
+        <activity android:name=".category"></activity>
     </application>
 
 </manifest>
