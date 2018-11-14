@@ -78,8 +78,11 @@ public class showQuestions extends AppCompatActivity {
                 for(DataSnapshot child:dataSnapshot.getChildren()){
                     HashMap s1= (HashMap) child.getValue();
                     assert s1 != null;
-                    s= (String) s1.get("Question");
-                    arrayList.add(String.valueOf(s));
+                    String status = (String) s1.get("visible");
+                    if(status.equals("Yes")){
+                        s = (String) s1.get("Question");
+                        arrayList.add(String.valueOf(s));
+                   }
                 }
                 arrayAdapter.notifyDataSetChanged();
             }

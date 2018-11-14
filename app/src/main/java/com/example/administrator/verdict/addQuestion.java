@@ -95,6 +95,7 @@ public class addQuestion extends AppCompatActivity {
 
     public void createQuestion() {
                 DatabaseReference UsersQuestion = FirebaseDatabase.getInstance().getReference().child("Questions").child(userid).child("User's Question " + i);
+                //DatabaseReference UsersQuestion = FirebaseDatabase.getInstance().getReference().child("Admin").child("Question" + i);
                 q = ques.getText().toString();
                 o1 = opt1.getText().toString();
                 o2 = opt2.getText().toString();
@@ -108,6 +109,7 @@ public class addQuestion extends AppCompatActivity {
                 options.put("Option 3", o3);
                 options.put("Option 4", o4);
                 options.put("Categories",category);
+                options.put("visible","No");
                 UsersQuestion.setValue(options);
                 DatabaseReference DefaultVoteCount = FirebaseDatabase.getInstance().getReference("All Votes").child(q);
 

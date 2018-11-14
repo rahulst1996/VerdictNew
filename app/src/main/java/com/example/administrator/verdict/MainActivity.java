@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
 
     RelativeLayout r1,r2,r3;
-    Button b1;
+    Button b1,b2;
     EditText e1;
     private FirebaseAuth firebaseAuth;
     private ProgressBar progressBar;
@@ -59,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
         progressBar=(ProgressBar)findViewById(R.id.prog);
         b1=(Button)findViewById(R.id.blogin);
         t=(TextView)findViewById(R.id.mnum);
+        b2 = findViewById(R.id.admin);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),AdminSignIn.class);
+                startActivity(intent);
+            }
+        });
 
         firebaseAuth=FirebaseAuth.getInstance();
 

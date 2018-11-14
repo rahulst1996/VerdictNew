@@ -121,8 +121,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="SignUp Now"
+            android:background="@drawable/btn_bg"
+            android:text="Admin Signin"
+            android:id="@+id/admin"
             android:textAllCaps="true"
             android:textColor="@color/white"/>
 
